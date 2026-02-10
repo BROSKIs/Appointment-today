@@ -4,10 +4,20 @@ const app = express();
 
 const PORT = 3000;
 
-app.get('/', (req, res) => {
-    res.send("Welcome Princess");
+app.get("/", (req, res) => {
+  res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
 
-app.listen(PORT, ()=>{
-    console.log(`server is running at http://localhost:${PORT}`);
+app.post("/submit", (req, res) => {
+  const schedule = {
+    fname: req.body.fname,
+    lname: req.body.lame,
+    date: req.body.date,
+    time: req.body.time,
+    timestamp: new Date(),
+  };
+});
+
+app.listen(PORT, () => {
+  console.log(`server is running at http://localhost:${PORT}`);
 });
