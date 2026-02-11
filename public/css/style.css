@@ -10,4 +10,6 @@ button{
     background-color: lime;
     color: white;
 }
-
+label{
+    display: block;
+}
