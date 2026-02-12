@@ -4,7 +4,7 @@ const app = express();
 
 const PORT = 3002;
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 app.use(express.urlencoded({ extended: true}));
 
@@ -27,6 +27,9 @@ app.post("/submit", (req, res) => {
     time: req.body.time ? req.body.time: "none",
     timestamp: new Date(),
   };
+
+  appointments.push(appointment);
+  res.send(appointments);
   schedules.push(schedule);
 
   res.sendFile(`${import.meta.dirname}/views/confirm.html`);

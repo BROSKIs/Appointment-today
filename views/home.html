@@ -4,17 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Appointment Form</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css" />
     <script src="js/script.js" defer></script>
   </head>
   <body>
     <form action="/submit" id="theForm" method="post">
       <h1>Schedule Appointment</h1>
       <fieldset class="justInCase">
-        <label for="lname">First Name: <span class="err" id="fname-error">Plese enter your First Name</span>
+        <label for="lname"
+          >First Name:
+          <span class="err" id="fname-error">Plese enter your First Name</span>
           <input type="text" id="fname" name="fname"
         /></label>
-        <label for="lname">Last Name: <span class="err" id="lname-error">Plese enter your Last Name</span>
+        <label for="lname"
+          >Last Name:
+          <span class="err" id="lname-error">Plese enter your Last Name</span>
           <input type="text" id="lname" name="lname"
         /></label>
         <label for="date"
@@ -26,7 +30,7 @@
           <input type="time" id="time" name="time" />
         </label>
       </fieldset>
-        <button type="submit" id="submit-btn" action="submit">Submit</button>
+      <button type="submit" id="submit-btn">Submit</button>
     </form>
   </body>
 </html>
