@@ -6,8 +6,14 @@ const PORT = 3002;
 
 app.use(express.static('public'));
 
+const schedules=[];
+
 app.get("/", (req, res) => {
   res.sendFile(`${import.meta.dirname}/views/home.html`);
+});
+
+app.get("/admin", ()=>{
+  res.sendFile(`${import.meta.dirname}/views/admin.html`);
 });
 
 app.post("/submit", (req, res) => {
@@ -18,6 +24,9 @@ app.post("/submit", (req, res) => {
     time: req.body.time,
     timestamp: new Date(),
   };
+  schedules.push(schedule);
+
+  res.sendFile(`${import.meta.dirname}/views/confirm.html`);
 });
 
 app.listen(PORT, () => {
