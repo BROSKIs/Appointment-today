@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+}
+/* FORM */
+form {
+    display: block;
+    border: 1px soild lightgoldenrodyellow;
+    padding: 3rem;
+    margin-top: 1rem;
+}
+
+fieldset{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+}
+
+button{
+    padding: .3rem;
+    background-color: lime;
+    color: white;
+}
+label{
+    display: block;
+    width: 100%;
+}
+input{
+    display: block;
+    grid-column: span 1;
+    width: 100%;
+    min-height: 20px;
+    box-sizing: border-box;
+}
+
+/* EROOR */
+.err{
+    color: red;
+    display: none;
+}
+

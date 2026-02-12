@@ -2,13 +2,11 @@ import express from "express";
 
 const app = express();
 
-const PORT = 3000;
+const PORT = 3002;
 
 app.use(express.static("public"));
 
-app.use(express.urlencoded({ extended: true }));
-
-const appointments = [];
+const schedules = [];
 
 app.get("/", (req, res) => {
   res.sendFile(`${import.meta.dirname}/views/home.html`);
@@ -16,6 +14,10 @@ app.get("/", (req, res) => {
 
 app.get("/admin", (req, res) => {
   res.send(appointments);
+});
+
+app.get("/admin", () => {
+  res.sendFile(`${import.meta.dirname}/views/admin.html`);
 });
 
 app.post("/submit", (req, res) => {
@@ -29,6 +31,9 @@ app.post("/submit", (req, res) => {
 
   appointments.push(appointment);
   res.send(appointments);
+  schedules.push(schedule);
+
+  res.sendFile(`${import.meta.dirname}/views/confirm.html`);
 });
 
 app.listen(PORT, () => {
