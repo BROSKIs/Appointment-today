@@ -28,8 +28,6 @@ app.post("/submit", (req, res) => {
     timestamp: new Date(),
   };
 
-  appointments.push(appointment);
-  res.send(appointments);
   schedules.push(schedule);
 
   res.sendFile(`${import.meta.dirname}/views/confirm.html`);
