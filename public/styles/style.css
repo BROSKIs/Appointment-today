@@ -1,12 +1,11 @@
-*{
-    margin: 0;
-}
+
 /* FORM */
 form {
     display: block;
     border: 1px soild lightgoldenrodyellow;
     padding: 3rem;
     margin-top: 1rem;
+    text-align: center;
 }
 
 fieldset{
@@ -14,13 +13,14 @@ fieldset{
     width: 100%;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-
+    text-align: left;
 }
 
 button{
     padding: .3rem;
     background-color: lime;
     color: white;
+    margin: 1rem;
 }
 label{
     display: block;

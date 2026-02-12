@@ -6,22 +6,25 @@ const PORT = 3002;
 
 app.use(express.static('public'));
 
+app.use(express.urlencoded({ extended: true}));
+
 const schedules=[];
 
 app.get("/", (req, res) => {
   res.sendFile(`${import.meta.dirname}/views/home.html`);
 });
 
-app.get("/admin", ()=>{
-  res.sendFile(`${import.meta.dirname}/views/admin.html`);
+app.get("/admin", (req, res)=>{
+  res.send(schedules)
 });
 
 app.post("/submit", (req, res) => {
+  // fname=sdf& lname=sdf& date=  time=#
   const schedule = {
     fname: req.body.fname,
-    lname: req.body.lame,
-    date: req.body.date,
-    time: req.body.time,
+    lname: req.body.lname,
+    date: req.body.date ? req.body.date: "none",
+    time: req.body.time ? req.body.time: "none",
     timestamp: new Date(),
   };
   schedules.push(schedule);
